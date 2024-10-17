@@ -1,0 +1,35 @@
+[workspace]
+members = [ "main"]
+resolver = "2"
+
+[workspace.package]
+edition = "2021"
+license = "Apache-2.0"
+repository = "https://github.com/rust-windowing/winit"
+
+[workspace.dependencies]
+cfg-if = "1"
+winit = "0.30.5"
+wgpu = "22.0"
+env_logger = "0.11"
+log = "0.4"
+pollster = "0.3"
+# NEW!
+bytemuck = "1.16"
+console_error_panic_hook = "0.1"
+console_log = "1.0"
+wasm-bindgen = "0.2"
+wasm-bindgen-futures = "0.4"
+web-sys = "0.3"
+cfg_aliases = "0.2.1"
+tracing = { version = "0.1.40" }
+tracing-subscriber = { version = "0.3.18" }
+rwh_06 = { package = "raw-window-handle", version = "0.6" }
+softbuffer = "0.4.6"
+cursor-icon = "1.1.0"
+image = "0.25.0" 
+cargo-run-wasm = "0.4.0"
+tracing-web = "0.1"
+futures = "0.3.31"
+nalgebra-glm = "0.19.0"
+web-time = "1.1"
