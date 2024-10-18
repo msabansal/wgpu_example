@@ -17,10 +17,6 @@ rwh_06 = { workspace = true, features = ["std"]}
 cursor-icon = { workspace = true }
 image = { workspace = true, features = ["png", "jpeg"] }
 futures = { workspace = true }
-nalgebra-glm = { workspace = true, features = [
-    "convert-bytemuck",
-    "serde-serialize",
-] }
 bytemuck =  { workspace = true, features = ["derive"] }
 web-time = { workspace = true }
 anyhow =  { workspace = true }

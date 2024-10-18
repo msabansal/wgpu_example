@@ -38,8 +38,8 @@ lint:
     cargo clippy --all --tests -- -D warnings
 
 # Run the desktop app
-run:
-    cargo run
+run $project="main":
+    cargo run --bin {{project}}
 
 # Build the app with wgpu + WebGL
 build-webgl:

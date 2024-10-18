@@ -1,5 +1,5 @@
 [workspace]
-members = [ "main"]
+members = [ "main", "yuv_converter"]
 resolver = "2"
 
 [workspace.package]
@@ -35,3 +35,4 @@ nalgebra-glm = "0.19.0"
 web-time = "1.1"
 openh264 = "0.6.2"
 anyhow = "1"
+tokio = "1"
