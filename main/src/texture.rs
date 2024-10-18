@@ -1,6 +1,6 @@
 use anyhow::*;
 use image::GenericImageView;
-use tracing::{info, instrument};
+use tracing::info;
 
 pub struct Texture {
     #[allow(unused)]

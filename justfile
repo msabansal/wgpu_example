@@ -22,7 +22,7 @@ docs:
 
 # Fix all automatically resolvable lints with clippy
 fix:
-    cargo clippy --all --tests --fix
+    cargo clippy --all --tests --fix --allow-dirty --allow-staged
 
 # Autoformat the workspace
 format:
