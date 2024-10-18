@@ -1,6 +1,6 @@
-set windows-shell := ["powershell.exe"]
+set windows-shell := ["pwsh.exe", "-Nologo", "-Command"]
 
-export RUST_LOG := "info,wgpu_core=off"
+export RUST_LOG := "info,wgpu_core=off,wgpu_hal=error"
 export RUST_BACKTRACE := "1"
 
 [private]
@@ -9,7 +9,7 @@ default:
 
 # Build the workspace
 build:
-    cargo build -r
+    cargo build
 
 # Check the workspace
 check:
@@ -37,25 +37,25 @@ init-wasm:
 lint:
     cargo clippy --all --tests -- -D warnings
 
-# Run the desktop app in release mode
+# Run the desktop app
 run:
-    cargo run -r
+    cargo run
 
 # Build the app with wgpu + WebGL
 build-webgl:
-    trunk build --features webgl
+    cd main && trunk build --features webgl
 
 # Build the app with wgpu + WebGPU
 build-webgpu:
-    trunk build --features webgpu
+    cd main && trunk build --features webgpu
 
 # Serve the app with wgpu + WebGL
 run-webgl:
-    trunk serve --features webgl
+    cd main && trunk serve --features webgl --open
 
 # Serve the app with wgpu + WebGPU
 run-webgpu:
-    trunk serve --features webgpu --open
+    cd main && trunk serve --features webgpu --open
 
 # Run the test suite
 test:
@@ -66,8 +66,8 @@ udeps:
   cargo machete
 
 # Watch for changes and rebuild the app
-watch $project="app":
-    cargo watch -x 'run -r -p {{project}}'
+watch $project="main":
+    cargo watch -x 'run -p {{project}}'
 
 # Display toolchain versions
 @versions:

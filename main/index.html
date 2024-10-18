@@ -43,6 +43,7 @@
                 const canvas = document.getElementById("canvas");
                 canvas.width = window.innerWidth;
                 canvas.height = window.innerHeight;
+                console.log("Resized canvas to", canvas.width, canvas.height);
             }
             window.addEventListener("resize", resizeCanvas);
             window.addEventListener("load", resizeCanvas);
