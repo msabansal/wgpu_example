@@ -171,8 +171,13 @@ impl ApplicationHandler for App {
                 }
             }
             WindowEvent::Resized(size) => {
-                let logical = size.to_logical::<u32>(window.scale_factor());
-                let (width, height) = ((logical.width).max(1), (logical.height).max(1));
+                let (width, height)  = if cfg!(target_arch = "wasm32") {
+                    let logical = size.to_logical::<u32>(window.scale_factor());
+                    (logical.width, logical.height)
+                } else {
+                    (size.width, size.height)
+                };
+                
                 tracing::info!("Resizing renderer surface to: ({width}, {height})");
                 renderer.resize(width, height);
                 self.last_size = (width, height);

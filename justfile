@@ -1,6 +1,6 @@
 set windows-shell := ["pwsh.exe", "-Nologo", "-Command"]
 
-export RUST_LOG := "info,wgpu_core=off,wgpu_hal=error"
+export RUST_LOG := "info,wgpu_core=error"
 export RUST_BACKTRACE := "1"
 
 [private]
